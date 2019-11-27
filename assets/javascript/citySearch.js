@@ -6,6 +6,8 @@ const cities = [];
 
 const prom = fetch(endpoint);
 console.log(prom);
+fetch(endpoint).then(blob => console.log(blob));
 fetch(endpoint)
   .then(blob => blob.json())
-  .then(data => cities.push(...data));
+  .then(data => console.log(data));
+//   .then(data => cities.push(...data));
