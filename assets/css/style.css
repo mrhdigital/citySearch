@@ -1,8 +1,10 @@
-html1 {
+html {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     text-align: center;
-    margin: 0;
-  padding: 0;
+    margin: 20;
+  padding: 50;
+  background: #ffc600;
+
 }
 
 
