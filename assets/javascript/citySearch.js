@@ -4,10 +4,20 @@ const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb
 
 const cities = [];
 
-const prom = fetch(endpoint);
-console.log(prom);
-fetch(endpoint).then(blob => console.log(blob));
+// const prom = fetch(endpoint);
+// console.log(prom);
+// fetch(endpoint).then(blob => console.log(blob));
 fetch(endpoint)
   .then(blob => blob.json())
-  .then(data => console.log(data));
-//   .then(data => cities.push(...data));
+//   .then(data => console.log(data));
+  // put this data into the array cities
+  .then(data => cities.push(...data));
+
+  function findMatches(wordToMatch, cities) {
+    return cities.filter(place => {
+      // here we need to figure out if the city or state matches what was searched
+       const regex = new RegExp(wordToMatch, 'gi');
+      return place.city.match(regex) || place.state.match(regex)
+    //return place.city.match(/bos/i);
+    });
+  }
