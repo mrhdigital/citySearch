@@ -21,3 +21,14 @@ fetch(endpoint)
     //return place.city.match(/bos/i);
     });
   }
+
+  function displayMatches() {
+console.log(this.value);
+  }
+
+  const searchInput = document.querySelector('.search');
+  const suggestions = document.querySelector('.suggestions');
+  
+
+  searchInput.addEventListener('change', displayMatches);
+
