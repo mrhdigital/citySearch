@@ -22,6 +22,11 @@ fetch(endpoint)
     });
   }
 
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  
+
   function displayMatches() {
 //console.log(this.value);
 const matchArray = findMatches(this.value, cities);
@@ -34,6 +39,8 @@ const html = matchArray.map(place => {
     return `
     <li>
      <span class = "name"> ${cityName}, ${stateName}</span>
+     <span class="population">${numberWithCommas(place.population)}</span>
+
      </li>
     `;
 }).join('');
