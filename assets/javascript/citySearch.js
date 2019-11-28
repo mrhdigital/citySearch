@@ -25,7 +25,15 @@ fetch(endpoint)
   function displayMatches() {
 //console.log(this.value);
 const matchArray = findMatches(this.value, cities);
-console.log(matchArray);
+//console.log(matchArray);
+const html = matchArray.map(place => {
+    return `
+    <li>
+     <span class = "name"> ${place.city}, ${place.state}</span>
+     </li>
+    `;
+}).join('');
+ suggestions.innerHTML = html;
   }
 
   const searchInput = document.querySelector('.search');
