@@ -23,7 +23,9 @@ fetch(endpoint)
   }
 
   function displayMatches() {
-console.log(this.value);
+//console.log(this.value);
+const matchArray = findMatches(this.value, cities);
+console.log(matchArray);
   }
 
   const searchInput = document.querySelector('.search');
@@ -31,4 +33,5 @@ console.log(this.value);
   
 
   searchInput.addEventListener('change', displayMatches);
+  searchInput.addEventListener('keyup', displayMatches);
 
